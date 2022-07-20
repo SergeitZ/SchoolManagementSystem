@@ -5,9 +5,9 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Teacher lizzy = new Teacher(1, "Lizzy", 500);
-        Teacher melissa = new Teacher(2, "Melissa", 700);
-        Teacher vanderhorn = new Teacher(3, "Vanderhorn", 600);
+        Teacher lizzy = new Teacher(1, "Lizzy", 500, 0);
+        Teacher melissa = new Teacher(2, "Melissa", 700, 0);
+        Teacher vanderhorn = new Teacher(3, "Vanderhorn", 600, 0);
 
         List<Teacher> teacherList = new ArrayList<>();
 
@@ -28,8 +28,21 @@ public class Main {
 
         School ghs = new School(teacherList, studentList);
 
-        System.out.println("GHS has earned $" + ghs.getTotalMoneyEarned());
-
        tamasha.payFees(5000);
+       rakshith.payFees(6000);
+       System.out.println("GHS has earned $" + ghs.getTotalMoneyEarned());
+
+       System.out.println("-----Making SCHOOL PAY SALARY-----");
+
+       lizzy.receiveSalary(lizzy.getSalary());
+       System.out.println("GHS has spent salary paying: " + lizzy.getName() + " and now has $" + ghs.getTotalMoneyEarned());
+
+       vanderhorn.receiveSalary(vanderhorn.getSalary());
+       System.out.println("GHS has spent salary paying: " + vanderhorn.getName() + " and now has $" + ghs.getTotalMoneyEarned());
+
+        System.out.println(rakshith);
+        melissa.receiveSalary(melissa.getSalary());
+        System.out.println(melissa);
+
     };
 }
